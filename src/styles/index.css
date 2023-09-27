@@ -1,0 +1,112 @@
+html {
+  overflow-y: scroll;
+
+  --game-spacing: 32px;
+  --component-spacing: 12px;
+
+  --color-primary: #646cff;
+  --color-neutral: hsl(0deg 0% 50%);
+  --color-error: red;
+  --color-success: green;
+  --color-warning: orange;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  padding: 36px 36px 12px;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@media (max-height: 600px) {
+  body {
+    --game-spacing: 24px;
+    --component-spacing: 8px;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 25rem) {
+  h1 {
+    font-size: 1.25rem;
+  }
+}
+
+button {
+  border-radius: 8px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  background-color: white;
+  padding: 1rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  margin: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+button:hover {
+  color: white;
+  background-color: var(--color-primary);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* utility classes */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.bare-button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px 15px;
+  text-align: center;
+  width: fit-content;
+}

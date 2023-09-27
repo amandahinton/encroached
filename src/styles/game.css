@@ -1,0 +1,80 @@
+/* Game */
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--game-spacing);
+  margin: 0 auto;
+  max-width: min(500px, 100%);
+  min-width: 250px;
+}
+
+/* Guesses */
+
+.guess-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  gap: 8px;
+}
+
+.guess {
+  height: 1.5rem;
+}
+
+/* GuessInput */
+
+.guess-input-wrapper {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.guess-input-wrapper label {
+  font-size: 1.25rem;
+}
+
+.guess-input-wrapper input {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--color-primary);
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0px 0.5rem 1rem;
+  width: 100%;
+}
+
+/* Result */
+
+.banner-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  animation: slideUp 750ms cubic-bezier(0, 0.72, 0.24, 1.02);
+  bottom: 0;
+  border-radius: 4px 4px 0px 0px;
+  left: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 32px 32px 200px 32px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  will-change: transform;
+}
+
+.happy.banner {
+  background: var(--color-success);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.sad.banner {
+  background: var(--color-error);
+  color: white;
+  font-weight: bold;
+}
