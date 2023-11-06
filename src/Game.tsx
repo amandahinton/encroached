@@ -1,7 +1,6 @@
 import React from "react";
 import { Result } from "@/components/Result";
 import { GuessInput } from "components/GuessInput";
-import { Guesses } from "components/Guesses";
 import { Hint } from "components/Hint";
 import { WORDS } from "@/constants";
 import "styles/game.css";
@@ -9,8 +8,18 @@ import "styles/game.css";
 const word = WORDS[Math.floor(Math.random() * WORDS.length)];
 
 export function Game() {
+  const [hint, setHint] = React.useState<string>(word.hint);
   const [guesses, setGuesses] = React.useState<string[]>([]);
   const [gameStatus, setGameStatus] = React.useState<string>("playing");
+
+  const handleHintLeft = () => {
+    let entireWord = word.prefix + word.hint + word.suffix;
+    let remainingWord = entireWord.substr(0, (entireWord).length - (hint + word.suffix).length);
+    setHint(remainingWord.charAt(remainingWord.length - 1) + hint);
+  };
+
+  const handleHintRight = () => {
+  };
 
   const handleGuess = (guess: string) => {
     const newGuesses: string[] = [...guesses, guess];
@@ -25,12 +34,8 @@ export function Game() {
 
   return (
     <div className="game-wrapper">
-      {gameStatus == "playing" && <Hint word={word} guesses={guesses} />}
+      {gameStatus == "playing" && <Hint word={hint} leftEnabled={true} rightEnabled={true} handleHintLeft={handleHintLeft} handleHintRight={handleHintRight} />}
       {gameStatus !== "playing" && <h2>{word.answer}</h2>}
-
-      <p>Number of Guesses Made: {guesses.length}</p>
-
-      <Guesses guesses={guesses} />
 
       {gameStatus == "playing" && (
         <GuessInput
